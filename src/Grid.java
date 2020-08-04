@@ -3,10 +3,10 @@ import java.awt.*;
 
 public class Grid extends JFrame {
 
-	public static void paint(Graphics g, int size) {
+	public static void paint(Graphics g, int size, Point p) {
         for (int i = 10; i < 710; i += size) {
             for (int j = 10; j < 710; j += size) {
-                Cell.paint(g, i, j, size);
+                Cell.paint(g, i, j, size, p);
             }
         }
     }
