@@ -7,7 +7,7 @@ public class Cell extends JFrame {
         Point p = MouseInfo.getPointerInfo().getLocation();
         int x = p.x;
         int y = p.y;
-        if(i<x && x<=i+size && j<y && y<=j+size){
+        if(i<x-5 && x-5 <=i+size && j+size <y+5 && y+5<=j+2*size){
                 g.setColor(Color.GRAY);
         }else{
                 g.setColor(Color.WHITE);
