@@ -13,6 +13,9 @@ public class Main extends JFrame {
         @Override
         public void paint(Graphics g){
             Point p =getMousePosition();
+            if(p==null){
+                repaint(); 
+              }
             Grid.paint(g, 35, p);
             repaint();
             
