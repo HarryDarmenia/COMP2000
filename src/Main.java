@@ -2,32 +2,34 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Main extends JFrame {
-    public static void main(String[] args) throws Exception {
-        Main window = new Main();
-    }
-    
-    public class Canvas extends JPanel {
-        public Canvas() {
+     public class App extends JPanel {
+
+        Grid grid;
+
+        public App() {
             setPreferredSize(new Dimension(720, 720));
-        }      
+            grid =  new Grid(); 
+        }  
+        
+        
         @Override
         public void paint(Graphics g) {
-            Point p = getMousePosition();
-            if (p == null) {
-                repaint();
-            }
-            Grid.paint(g, 35, p);
-            repaint();
-            
+            grid.paint(g);
         }       
+    }
+
+    public static void main(String[] args) throws Exception {
+        Main window = new Main();
+        
     }
     
     public Main() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Canvas canvas = new Canvas();
+        App canvas = new App();
         this.setContentPane(canvas);
         this.pack();
         this.setVisible(true);
         
     }
 }
+

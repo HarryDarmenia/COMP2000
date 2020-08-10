@@ -1,13 +1,30 @@
-import javax.swing.*;
+
 import java.awt.*;
 
-public class Grid extends JFrame {
 
-	public static void paint(Graphics g, int size, Point p) {
-        for (int i = 10; i < 710; i += size) {
-            for (int j = 10; j < 710; j += size) {
-                Cell.paint(g, i, j, size, p);
+class Grid{
+    
+    Cell[][] cells = new Cell[20][20];
+
+    public Grid(){ 
+        for (int i = 0; i < cells.length; i ++) {
+            for (int j = 0; j < cells[i].length; j ++) {
+                cells[i][j]= new Cell(10+35*i,10+35*j);
             }
         }
     }
-}
+    
+
+    public void paint(Graphics g){
+        for (int i = 0; i < cells.length; i ++) {
+            for (int j = 0; j < cells[i].length; j ++) {
+                cells[i][j].paint(g);
+
+                }
+        }
+    }
+    
+
+    }
+
+
