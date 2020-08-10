@@ -3,29 +3,26 @@ import java.awt.*;
 
 public class Main extends JFrame {
     public static void main(String[] args) throws Exception {
-       Main window = new Main ();
+        Main window = new Main();
     }
-
-    public class Canvas extends JPanel{
-        public Canvas(){
-            setPreferredSize(new Dimension(720,720));
-        }
+    
+    public class Canvas extends JPanel {
+        public Canvas() {
+            setPreferredSize(new Dimension(720, 720));
+        }      
         @Override
-        public void paint(Graphics g){
-            Point p =getMousePosition();
-            if(p==null){
-                repaint(); 
-              }
+        public void paint(Graphics g) {
+            Point p = getMousePosition();
+            if (p == null) {
+                repaint();
+            }
             Grid.paint(g, 35, p);
             repaint();
             
-        }
-
+        }       
     }
-
-
-
-    public Main(){
+    
+    public Main() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Canvas canvas = new Canvas();
         this.setContentPane(canvas);
