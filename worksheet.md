@@ -59,7 +59,8 @@ Have the program start with 1 grid and 3 actors:
 Rabbit (drawn white)
 Lion (drawn red)
 Puppy (drawn green)
-Task 8
+
+# Task 8
 Have a close look at your Rabbit, Lion and Puppy classes. If they are anything like mine they are all the same except for the colour they use. This repetition is "a bad thing" because if the same thing is done in three different places, we need to remember that updating one requires us to update all three.
 
 Is there a place that you could put all the common parts?
