@@ -14,8 +14,12 @@ public class Main extends JFrame {
         
         @Override
         public void paint(Graphics g) {
-            grid.paint(g);
-        }       
+            System.out.println(getMousePosition());
+            grid.paint(g , getMousePosition());
+            repaint();
+        }   
+
+         
     }
 
     public static void main(String[] args) throws Exception {
