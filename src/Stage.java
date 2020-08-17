@@ -1,27 +1,35 @@
 import java.awt.*;
+import java.util.*;
 
 public class Stage{
+    
     Grid grid;
-    Actor puppy;
-    Actor lion;
-    Actor rabbit;
-
-
+     ArrayList<Actor> actors = new ArrayList<Actor>();
+     Actor puppy;
+     Actor lion;
+     Actor rabbit;
 
 
     public Stage(){
+       
         grid = new Grid();
-        puppy = new Puppy(grid.cells[0][0]);
-        lion = new Lion(grid.cells[0][18]);
-        rabbit = new Rabbit(grid.cells[14][4]);
 
+        puppy = new Puppy(grid.cellAtColRow(0,0));
+        lion = new Lion(grid.cellAtColRow(0,18));
+        rabbit = new Rabbit(grid.cellAtColRow(14,3));
+
+        actors.add(puppy);
+        actors.add(lion);
+        actors.add(rabbit); 
     }
+
+
 
     public void paint (Graphics g,Point mouseLoc){
         grid.paint(g, mouseLoc);
-        puppy.paint(g);
-        lion.paint(g);
-        rabbit.paint(g);
+        for (int i=0; i<actors.size(); i++){
+            actors.get(i).paint(g);
+        }
     }
 }
 

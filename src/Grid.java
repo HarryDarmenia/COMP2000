@@ -22,6 +22,9 @@ class Grid{
             }
         }
     }  
+    public Cell cellAtColRow(int r, int c){
+        return cells[c][r];
+    }
 }
 
 
