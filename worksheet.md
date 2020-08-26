@@ -70,7 +70,7 @@ Is there a place that you could put all the common parts?
 # Task 9
 Draw a picture of the inheritance hierarchy you have created. You should (loosely) use UML notation for your diagram. You are using UML In this case, and all through this course, only for "a rough sketch of an idea".
 
-# Task 10
+#Task 10
 Did you notice the repetition in the stage paint method? All three actors have the paint method called on them. In fact, we might later want to have dozens of actors on the stage at any one time, we don't want dozens of calls to someone.paint(g);. What we need is a collection to store all the actors, something like an array that we can put them all in. Then we can just loop over that array and call paint on every element. I think we should use an ArrayList (https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html). Notice it is a generic collection? You will need to use generics to make this work. Put all the actors in a single array list called actors and then loop over this list to paint them. Once you have done that you might like to add more actors to the stage.
 
 🤔 In my solution, I will declare the actors list as a List instead of an ArrayList. Any idea why? Why does this even work?
